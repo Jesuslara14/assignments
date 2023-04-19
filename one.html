@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uno</title>
+</head>
+<body>
+    <form id="form">
+        <label for="tel">Enter a phone number</label>
+        <input type="tel" id="tel">
+        <input type="submit">
+    </form>
+    <span id="output"></span>
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e){
+            e.preventDefault();
+            checkNumber();
+        });
+        function checkNumber(){
+            var num = document.getElementById("tel").value;
+            if(num.match(/\d{3}-\d{3}-\d{4}$/) != null){
+                document.getElementById("output").innerHTML = "Valid phone #";
+            }else{
+                document.getElementById("output").innerHTML = "Invalid phone #";
+            }
+        }
+    </script>
+</body>
+</html>

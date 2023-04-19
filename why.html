@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tre</title>
+</head>
+<body>
+    <div id="inputs">
+        <input type="number">
+        <input type="number">
+    </div>
+    <span id="output"></span>
+    <script>
+        var inputs = document.getElementById("inputs");
+        for(var i = 0; inputs.children.length > i; i++){
+            inputs.children[i].addEventListener("input", calculate);
+        }
+
+        function calculate(){
+            document.getElementById("output").innerHTML = +inputs.children[0].value + +inputs.children[1].value;
+        }
+    </script>
+</body>
+</html>
